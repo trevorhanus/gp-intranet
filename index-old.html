@@ -1,0 +1,421 @@
+  <!DOCTYPE html>
+
+  <html lang="en" >
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gravity Payments Intranet</title>
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" /> -->
+    <link href="css/gravity-payments.css" rel="stylesheet" /></link>
+    <link href="css/Gravity.css" rel="stylesheet" /></link>
+    <link href="css/StickyFooter.css" rel="stylesheet" /></link>
+
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js" type="text/javascript"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" type="text/javascript"></script>
+
+    <script src="Scripts/Gravity.js" type="text/javascript"></script>
+
+    <!-- The following scripts and styles are for the google news feed used with the tiny pulse -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="scripts/jquery.bootstrap.newsbox.min.js" type="text/javascript"></script>
+
+    <!-- The following scripts and styles are for the google news feed used with the tiny pulse -->
+    <style>
+
+      .glyphicon {
+        margin-right: 4px !important; /*override*/
+      }
+      .pagination .glyphicon {
+        margin-right: 0px !important; /*override*/
+      }
+      .pagination a {
+        color: #555;
+      }
+      .panel ul {
+        padding: 0px;
+        margin: 0px;
+        list-style: none;
+      }
+      .news-item {
+        padding: 4px 4px;
+        margin: 0px;
+        border-bottom: 1px dotted #555;
+      }
+
+    </style>
+
+    <!-- The following scripts and styles are for the google news feed used with the tiny pulse -->
+    <script type="text/javascript">
+      $(function () {
+        $(".TinyPulse").bootstrapNews({
+          newsPerPage: 4,
+          autoplay: true,
+          pauseOnHover: true,
+          direction: 'up',
+          newsTickerInterval: 2800,
+          onToDo: function () {
+                    //console.log(this);
+                  }
+                });
+      });
+    </script>
+
+  </head>
+  <body>
+    <form method="post" action="./GravityHome.aspx" id="form1">
+      <div class="aspNetHidden">
+        <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTE4OTcwMjc3MDYPZBYCZg9kFgICAw9kFgICAw9kFgwCAQ8WAh4JaW5uZXJodG1sBakBPGRpdiBjbGFzcz0icHJvZ3Jlc3MtYmFyIHByb2dyZXNzLWJhci1zdWNjZXNzIiByb2xlPSJwcm9ncmVzc2JhciIgYXJpYS12YWx1ZW5vdz0iNjMiIGFyaWEtdmFsdWVtaW49IjAiIGFyaWEtdmFsdWVtYXg9IjEwMCIgc3R5bGU9IndpZHRoOjYzJSI+NjMlIENvbXBsZXRlIChzdWNjZXNzKTwvZGl2PmQCBQ8WAh4LXyFJdGVtQ291bnQCChYUZg9kFgJmDxUCATENUGF1bCBLaXJpYWtvc2QCAQ9kFgJmDxUCATIMU2hhd24gRmVkaW5hZAICD2QWAmYPFQIBMw1CcmFkIEhlbm5lc3N5ZAIDD2QWAmYPFQIBNAxBeW1hbiBMdWthdGFkAgQPZBYCZg8VAgE1DEphcmVkIFNwZWFyc2QCBQ9kFgJmDxUCATYKSmltIEZyeWV0dGQCBg9kFgJmDxUCATcMTWljYWggQ2hpbmVuZAIHD2QWAmYPFQIBOBFDaHJpc3RpYW4gT2Nhcml6YWQCCA9kFgJmDxUCATkKQW5kcmlhIExpbWQCCQ9kFgJmDxUCAjEwCkFkYW0gU21pdGhkAgcPDxYCHgRUZXh0BRNVcGRhdGVkIEZlYiAwMiAyMDE2ZGQCCw8WAh8ABZ1JPGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5Db2R5IEI8L2g1PjxoND4iVGhhbmtzIGZvciBhbHdheXMgYmVpbmcgc28gZmxleGlibGUgYW5kIG1ha2luZyB0aGUgdGVhbSBiZXR0ZXIhIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkphbWVzIFI8L2g1PjxoND4iWW91J3ZlIGJlZW4gc3VwZXIgaGVscGZ1bCB0byBtZSB0aGUgbGFzdCBmZXcgd2Vla3MuIFRoYW5rcyBmb3IgYmVpbmcgYXdlc29tZSBtYW4uIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PktpbWJlcmxleSBQPC9oNT48aDQ+IkdyZWF0IGpvYiBvbiB0cmFpbmluZyB0aGUgbmV3ZXN0IEZpbmFuY2UgdGVhbSBtZW1iZXJzIGFuZCBldmVuIG9sZGVyIHRlYW0gbWVtYmVycyB0aGF0IHRlbmQgdG8gZm9yZ2V0IHRoaW5ncy4gVGhleSBhcmUgcGlja2luZyB0aGluZ3MgdXAgcXVpY2tseSBhbmQgSSBoYXZlIGhlYXJkIGEgbG90IG9mIHBvc2l0aXZlIGZlZWRiYWNrIGFib3V0IHlvdXIgdHJhaW5pbmcgcmVnaW1lIHdoaWNoIGV2aWRlbnRseSBzaG93cyBieSBob3cgZmFzdCB0aGV5IGFyZSBwaWNraW5nIHVwIHJlYWRpbmcgc3RhdGVtZW50cyBhbmQgZ2VuZXJhdGluZyBwcm9wb3NhbHMuICBHcmVhdCB3b3JrIEtpbWJlcmxleSEgWW91J3JlIGEgSFVHRSBhc3NldCB0byB0aGUgRmluYW5jZSB0ZWFtIGFuZCBHcmF2aXR5LiI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5NYXR0aGV3IEQ8L2g1PjxoND4iVGhhbmtzIGZvciBhbHdheXMgbWFraW5nIG15IGRheSBhIGxpdHRsZSBicmlnaHRlciEgWW91IGRhIGJlc3QuICI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5CZWNjYSBHPC9oNT48aDQ+IkV4Y2l0ZWQgdG8gaGF2ZSB5b3Ugb24gdGhlIHRlYW0hISEiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+QXNobGllIEI8L2g1PjxoND4iWW91J3JlIGtpbGxpbmcgaXQgaW4gYWxsIHdheXMuIEtlZXAgaXQgdXAgZ2YgOikiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+Q2FyeSBDPC9oNT48aDQ+IllvdSd2ZSBiZWVuIHN1cGVyIGluZm9ybWF0aXZlISBUaGFua3MgZm9yIGJlaW5nIGFuIGF3ZXNvbWUgdHJhaW5lci4gIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PktpbWJlcmxleSBQPC9oNT48aDQ+IlNoZSBpcyBhbiBhd2Vzb21lIHRlYWNoZXIgYW5kIHNvIGtub3dsZWRnZWFibGUhICI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5KZW5hZSBUPC9oNT48aDQ+IlRoYW5rIHlvdSBmb3IgdGVhY2hpbmcgbWUgaG93IHRvIHVzZSB0aGUgY29mZmVlIG1hY2hpbmUhISBNeSBkYXkgZ290IGV4cG9uZW50aWFsbHkgYmV0dGVyIHdpdGggZXNwcmVzc28hICI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5NYXVyaWNlIEQ8L2g1PjxoND4iRXhjaXRlZCB0byBoYXZlIHlvdSBvbiB0aGUgVGVhbS4gIFdlbGNvbWUgdG8gR3Jhdml0eSBhbmQgVGVhbSBBZHZvY2F0ZXMhIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkNhaXRsaW4gQzwvaDU+PGg0PiJUaGFua3MgZm9yIGhpcmluZyBzbyBtYW55IGF3ZXNvbWUgcGVvcGxlIHRvIHdvcmsgaGVyZSEgSSBsaWtlIHRoZW0gYWxsISEhIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkRhcmN5IEc8L2g1PjxoND4iWW91J3ZlIGJlZW4gZ29uZSBvbmUgZGF5LCBhbmQgdGhlIG9mZmljZSBpcyBhbHJlYWR5IG1vcmUgbW9yb3NlIHRoYW4gSSBjb3VsZCBoYXZlIGltYWdpbmVkLiBZb3UgYXJlIHRoZSBwZXAgb2YgdGhlIG9mZmljZSEiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+Sm9uLUVyaWsgRTwvaDU+PGg0PiJBcHByZWNpYXRlIHlvdSB0YWtpbmcgdGltZSB0byBoZWxwIG1lIG91dCBhcyBJIGtlZXAgbGVhcm5pbmcgdGhlIGZpbmFuY2Ugd2F5IG9mIGxpZmUhISBUaGFua3MgSkUhISI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5FbWlseSBTPC9oNT48aDQ+IlRoYW5rIHlvdSBzbyBtdWNoIGZvciBwdXR0aW5nIGFsbCB0aGUgaGFyZCB3b3JrIGludG8gZGV2ZWxvcGluZyB0aGUgY3Jvc3MtdHJhaW5pbmcgcHJvZ3JhbSEgSXQncyBnb2luZyB0byBiZSBleHRyZW1lbHkgdmFsdWFibGUgYW5kIEkgYW0gdmVyeSBleGNpdGVkIHRvIGdldCBpdCBzdGFydGVkIGFuZCBzZWUgdGhlIHN1Y2Nlc3MhICI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5IdW50ZXIgUjwvaDU+PGg0PiJJJ20gZ2xhZCB5b3UgaGFkIHRoZSB2aXNpb24gZm9yIHRoZSBrbm93bGVkZ2ViYXNlIGFuZCBnb3QgaXQgZ29pbmcuIE9uY2UgaXQncyBkb25lIGl0IHdpbGwgYmUgbGlrZSBhbiBhbWF6aW5nIHdvcmsgb2YgYXJ0ISBUaGFua3MhIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkpvbmFoIE88L2g1PjxoND4iSG9wZSB5b3UncmUgaGF2aW5nIGEgZmFudGFzdGljIHdlZWshISI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5Kb3NlIEc8L2g1PjxoND4id29yZHMgY2FuJ3QgZXZlbiBkZXNjcmliZSBob3cgd29uZGVyZnVsIHRoaXMgbWFuIGlzLiAiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+QWFyb24gRzwvaDU+PGg0PiJJJ20gc28gcHJvdWQgb2YgeW91IEFhcm9uIGFzIHlvdSBoYXZlIGdyb3duIHNvIG11Y2ggdGhlIGxhc3QgNCBtb250aHMuIFlvdSBhcmUgZG9pbmcgc3VjaCBhIGdyZWF0IGpvYiEgWW91ciBoYXJkIHdvcmsgZXRoaWMgYW5kIGNvbW1pdG1lbnQgdG8gY3VzdG9tZXIgc2VydmljZSBhcmUgd2hhdCBtYWtlIHlvdSBzbyBncmVhdC4gUHJvdWQgdG8gd29yayBhbG9uZ3NpZGUgeW91ISI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5NYXR0aGV3IEQ8L2g1PjxoND4iVGhhbmsgeW91IGZvciBhbHdheXMgYmVpbmcgbXkgc3Vuc2hpbmUuIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkRhcmN5IEc8L2g1PjxoND4iWW91IGFyZSBteSBCZXlvbmNlLiBBbHdheXMuIFdIQVQgQU0gSSBHT0lORyBUTyBETyBXSVRIT1VUIFlPVSBGT1IgQSBXRUVLPyEiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+Sm9uLUVyaWsgRTwvaDU+PGg0PiJKb24tRXJpayB5b3Ugcm9jayEgWW91IGRvIHN1Y2ggYSBncmVhdCBqb2Igd2l0aCBwcm9wb3NhbHMgYW5kIHlvdXIgYXR0ZW50aW9uIHRvIGRldGFpbCBpcyB1bnBhcmFsbGVsZWQhIEkga25vdyBJIGNhbiBhbHdheXMgY291bnQgb24geW91ISBUaGFua3MgYnJvISI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5IYXlsZXkgVjwvaDU+PGg0PiJZb3UgYXJlIGEgYmVhdXRpZnVsIHNvdWwuICI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5Kb3NlIEc8L2g1PjxoND4iWW91IG1ha2UgbWUgc21pbGUhIFRoYW5rcyBmb3IgYmVpbmcgYSBncmVhdCBwZXJzb24hIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkFtYW5kYSBWPC9oNT48aDQ+IkkganVzdCB0aGluayB5b3UncmUgcmVhbGx5IHN1cGVyIGNvb2wuIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkRhdmlkIFM8L2g1PjxoND4iQSBjaGVlcnMgZm9yIHlvdSBiZWNhdXNlIHlvdSdyZSBhd2Vzb21lISI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5KYXJlZCBTPC9oNT48aDQ+ImZvciBiZWluZyBhIGZ1bmt5IG1vdGhlci4uLlxyXG5TSFVUIFlPIE1PVVRIXHJcbmJ1dCBpbSBqdXN0IHRhbGtpbmcgYm91dCBGdW5reSBKYXJlZC5cclxuVEhFTiBXRSBDQU4gRElHIElUXHJcbiI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5EYW5pZWwgUjwvaDU+PGg0PiJIZXkgbWFuLCB0aGFua3MgZm9yIGFsbCB0aGUgaGVscCBhbmQgYWR2aWNlIHlvdSd2ZSBnaXZlbiBsYXRlbHkuICBZb3UgYXJlIGFuIGF3ZXNvbWUgcmVzb3VyY2UgYW5kIGRpc3BsYXkgYSBsb3Qgb2YgcmVhbGx5IGdyZWF0IGxlYWRlcnNoaXAgcXVhbGl0aWVzLiAgSXQncyBncmVhdCB3b3JraW5nIHdpdGggeW91LiI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5CcmFkIEg8L2g1PjxoND4iVGhhbmtzIGZvciBsZXR0aW5nIG1lIGJlIHlvdXIgc2hhZG93LCBhbmQgYWxtb3N0IGdldHRpbmcgbWUga2lsbGVkLiBJdCdzIGFsbCBnb29kIHdoZW4gaXQgdHVybnMgaW50byBhbiBhcHBvaW50bWVudCB0aG91Z2guIE5leHQgdGltZSBJIHZpc2l0IGxldCdzIHRyeSB0byBoYXZlIGZld2VyIG5lYXIgZGVhdGggZXhwZXJpZW5jZXMuICI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5HYXJyZXQgTjwvaDU+PGg0PiJHbGFkIHRvIGZpbmFsbHkgbWVldCB0aGUgcG9rZXIgY2hhbXAgbGl2ZSBhbmQgaW4gcGVyc29uISBEb2Vzbid0IGZlZWwgc28gYmFkIGxvc2luZyB0byBhIHN0YW5kIHVwIGd1eSwgVGhhbmtzIGZvciBtYWtpbmcgbWUgZmVlbCB3ZWxjb21lIGluIElkYWhvIGFuZCBzaG93aW5nIG1lIHRoZSByb3Blcy4gIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkthdGllICBSPC9oNT48aDQ+IlNvIGdsYWQgdG8gaGF2ZSB5b3Ugb24gdGhlIHRlYW0hIENvbmdyYXRzIG9uIHlvdXIgZmlyc3QgZmV3IGRheXMgaW4gdGhlIGZpZWxkIGFuZCBsZXR0aW5nIE1pbm5lc290YSBrbm93IHdoYXQncyB1cCEgIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkFsZXggTDwvaDU+PGg0PiJGb3VyIHdlZWtzIGRvd24gYW5kIHlvdSBhcmUgYWxyZWFkeSBzaG93aW5nIE1pbm5lc290YSB3aGF0J3MgdXAhIEV4Y2l0ZWQgdG8gc2VlIHdoYXQgeW91IGFuZCBLYXRpZSBkbyB0aGlzIHdlZWssIGtlZXAgaXQgdXAhICI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5BbGV4IEY8L2g1PjxoND4iVGhhbmtzIGZvciBhbGwgdGhlIGdyZWF0IGZlZWRiYWNrIGFuZCBzdXBwb3J0ISAiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+SmFzb24gSDwvaDU+PGg0PiJKYXNvbiBoYXMgYSB2ZXJ5IGtlZW4gZXllIGZvciBkZXRhaWwgdGhhdCBoYXMgcHJvYmFibHkgc2F2ZWQgbWUgZnJvbSBtYWtpbmcgaG9ycmlibGUgbWlzdGFrZXMgdGltZSBhbmQgdGltZSBhZ2FpbiAoYmUgaXQgaW4gb2ZmaWNlLXdpZGUgZS1tYWlscyBvciB0byBzb21ldGhpbmcgaW4gb3VyIGJhY2tlbmQgc3lzdGVtcy4uLikuIFRoYW5rcyBmb3IgYWx3YXlzIGJlaW5nIG9wZW4gdG8gYWN0aW5nIGFzIGEgc2Vjb25kIHNldCBvZiBleWVzISBZb3VyIHBhdGllbmNlIGRvZXNuJ3QgZ28gdW5ub3RpY2VkLiAiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+U29layBDPC9oNT48aDQ+IlRoYW5rIHlvdSBmb3IgbGV0dGluZyBtZSBzaGFkb3cgeW91IGFuZCBoZWxwaW5nIG1lIGRvIG15IGZpcnN0IHByb3Bvc2FsISEiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+TnlkZWxpcyBPPC9oNT48aDQ+Ik55ZGVsaXMsIEtpbWJlcmxleSwgYW5kIE5pY2sgcm9ja2VkIHByZXNlbnRhdGlvbnMgZHVyaW5nIG9yaWVudGF0aW9uIHRoaXMgd2VlayEhIFRoYW5rIHlvdSEiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+S2ltYmVybGV5IFA8L2g1PjxoND4iTnlkZWxpcywgS2ltYmVybGV5LCBhbmQgTmljayByb2NrZWQgcHJlc2VudGF0aW9ucyBkdXJpbmcgb3JpZW50YXRpb24gdGhpcyB3ZWVrISEgVGhhbmsgeW91ISI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5OaWNrIEg8L2g1PjxoND4iTnlkZWxpcywgS2ltYmVybGV5LCBhbmQgTmljayByb2NrZWQgcHJlc2VudGF0aW9ucyBkdXJpbmcgb3JpZW50YXRpb24gdGhpcyB3ZWVrISEgVGhhbmsgeW91ISI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5KaW0gRjwvaDU+PGg0PiJUaGFuayB5b3UgZm9yIHByb2FjdGl2ZWx5IHZvbHVudGVlcmluZyB0byB0YWtlIHRoZSBzaHJlZCBib3ggb3V0ISEgSXQgd2FzIGEgaHVnZSBoZWxwLiI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5LYXRpZSAgUjwvaDU+PGg0PiJXZWxjb21lIHRvIHRoZSB0ZWFtLCB3ZSdyZSBleGNpdGVkIHRvIGhhdmUgeW91IGhlcmUhIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkpvbmFoIE88L2g1PjxoND4iV2VsY29tZSB0byB0aGUgdGVhbSwgd2UncmUgZXhjaXRlZCB0byBoYXZlIHlvdSBoZXJlISI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5Db3VydG5leSBUPC9oNT48aDQ+IllvdSBhcmUgYWJzb2x1dGVseSBraWxsaW5nIGl0IG9uIHRoZSBwaG9uZXMhIFlvdSBjb21lIGFjcm9zcyBhcyBhIHNlYXNvbmVkIHBybywgYW5kIEkga25vdyB5b3UncmUgZ29pbmcgdG8gZG8gZ3JlYXQgdGhpbmdzIGhlcmUgYXQgR3Jhdml0eSEiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+Q2FpdGxpbiBDPC9oNT48aDQ+IlRoYW5rcyBmb3IgaGlyaW5nIGdyZWF0IHBlb3BsZSBmb3IgdXMhISEgIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PllsYW4gTTwvaDU+PGg0PiJUaGFua3MgZm9yIGFsd2F5cyBmaXhpbmcgbXkgY29tcHV0ZXIgd2l0aCB5b3VyIG1hZ2ljYWwgcG93ZXJzISBBbmQgZm9yIHB1dHRpbmcgdXAgd2l0aCBhbGwgbXkgYW5ub3lpbmcgcmVxdWVzdHMhIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkJhcnQgQjwvaDU+PGg0PiJZb3UncmUgYWx3YXlzIGhlbHBpbmcgZXZlcnlvbmUuIFRoYW5rcyEiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+UnlhbiBQPC9oNT48aDQ+IkEgY2hlZXJzIGZvciB5b3Ugc2luY2UgeW91J3JlIHRoZSBiZXN0IGVtYWlsIHdyaXRlciBvbiB0aGUgcGxhbmV0LiAiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+RGFuaWVsIFI8L2g1PjxoND4iQSBjaGVlcnMgZm9yIHlvdSBqdXN0IGJlY2F1c2UgeW91J3JlIGF3ZXNvbWUgYW5kIGRvIGEga2ljay1hc3Mgam9iIGF0IHlvdXIgam9iLiAiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+TmF0aGFuIEo8L2g1PjxoND4iVGhhbmtzIHNvIG11Y2ggZm9yIHN1cnByaXNpbmcgbWUgd2l0aCBhIHJpZGUgdG8gdGhlIG9mZmljZS0gdGhhdCBtYWRlIG15IGRheSEgWW91IGFyZSBnZW5lcm91cyBhbmQgYXdlc29tZS4gVGhhbmtzISI8L2g0PjwvdGQ+PC90cj48L3RhYmxlPjwvbGk+PGxpIGNsYXNzPSJuZXdzLWl0ZW0iPjx0YWJsZT48dHI+PHRkPjxoNT5Tb2VrIEM8L2g1PjxoND4iVEFMSyBBQk9VVCBBIFRFQU0gUExBWUVSISAgU29layBpcyBhYnNvbHV0ZWx5IGFtYXppbmcuICBIZSdzIGNvbnN0YW50bHkgZG9pbmcgYW55dGhpbmcgYW5kIGV2ZXJ5dGhpbmcgaGUgY2FuIHRvIGhlbHAgdGhpcyBwbGFjZSBncm93LiAgU28gZ3JlYXQgdG8gaGF2ZSBoaW0gYXJvdW5kLiAiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPjxsaSBjbGFzcz0ibmV3cy1pdGVtIj48dGFibGU+PHRyPjx0ZD48aDU+R2FycmV0dCBFPC9oNT48aDQ+IlRoaXMgZ3V5IHJvY2tzLiBDb25zaXN0ZW50bHkgYW5zd2VycyBjb21wbGV4IHF1ZXN0aW9ucyBzaW1wbHkgYW5kIGVmZmVjdGl2ZWx5LCBTbGFjayBTdXBlcmhlcm8uIjwvaDQ+PC90ZD48L3RyPjwvdGFibGU+PC9saT48bGkgY2xhc3M9Im5ld3MtaXRlbSI+PHRhYmxlPjx0cj48dGQ+PGg1PkFsZXggTDwvaDU+PGg0PiJXYXkgdG8gb3duIHRoZSBmaXJzdCAmIHNlY29uZCB3ZWVrISBNaW5uZXNvdGEgZGlkbid0IGV2ZW4gc2VlIGl0IGNvbWluZyEiPC9oND48L3RkPjwvdHI+PC90YWJsZT48L2xpPmQCDw8WAh8BAgQWCGYPZBYCZg8VAx9UaGlzIGlzIHRlc3QgYXJ0aWNsZSBudW1iZXIgMi5hzAFUaGlzIGlzIHNvbWUgdGV4dCBmb3IgdGhlIGFydGljbGUuICBUaGlzIGlzIHNvbWUgdGV4dCBmb3IgdGhlIGFydGljbGUuICBUaGlzIGlzIHNvbWUgdGV4dCBmb3IgdGhlIGFydGljbGUuICBUaGlzIGlzIHNvbWUgdGV4dCBmb3IgdGhlIGFydGljbGUuICBUaGlzIGlzIHNvbWUgdGV4dCBmb3IgdGhlIGFydGljbGUuICBUaGlzIGlzIHNvbWUgdGV4dCBmby4uLi4PVHVlIEZlYiAxNiAyMDE2ZAIBD2QWAmYPFQMxVGhpcyBpcyBhIHRlc3QgaGVhZGxpbmUgZm9yIHRoZSBmaXJzdCBhcnRpY2xlIHNzLswBVGhpcyBpcyBzb21lIHRleHQgZm9yIHRoZSBhcnRpY2xlLiAgVGhpcyBpcyBzb21lIHRleHQgZm9yIHRoZSBhcnRpY2xlLiAgVGhpcyBpcyBzb21lIHRleHQgZm9yIHRoZSBhcnRpY2xlLiAgVGhpcyBpcyBzb21lIHRleHQgZm9yIHRoZSBhcnRpY2xlLiAgVGhpcyBpcyBzb21lIHRleHQgZm9yIHRoZSBhcnRpY2xlLiAgVGhpcyBpcyBzb21lIHRleHQgZm8uLi4uD01vbiBKYW4gMTggMjAxNmQCAg9kFgJmDxUDElRoaXMgaXMgYXJ0aWNsZSA1YVdUaGlzIGlzIHNvbWUgdGV4dCB0aGF0IGlzIGFydGljbGUgNS4gIFRoaXMgd2lsbCBiZSBhIGZhaXJseSBzaG9ydCBkZWFsLiAgQWRkIHNvbWUgdGV4dC4PTW9uIERlYyAxNCAyMDE1ZAIDD2QWAmYPFQNcVGhlIGFydGljbGUgdGl0bGUgaXMgYSBiaXQgbG9uZ2VyIHRoYXQgdGhlIHR5cGljYWwgYXJ0aWNsZSB0aXRsZSBhbmQgd2lsbCB0YWtlIHVwIG1vcmUgc3BhY2VGVGhpcyBpcyBzb21lIHRleHQgZm9yIHRoZSBhcnRpY2xlLiAgVGhpcyBpcyBzb21lIHRleHQgZm9yIHRoZSBhcnRpY2xlLg9Nb24gRGVjIDE0IDIwMTVkAhcPDxYCHghJbWFnZVVybAUWfi9pbWFnZXMvVGlueVB1bHNlLnBuZ2RkZGY7N5OvZmf7ZDTJOu6rE0r8eBOZ28iUJ0hSQZchnxoI" />
+      </div>
+
+      <div class="aspNetHidden">
+       <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2D0ECBCB" />
+     </div>
+
+     <nav class="navbar navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="GravityHome.aspx">Gravity Payments </a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+
+            <li>
+              <p class="navbar-btn">
+                <a href="EmpSearch.aspx" class="btn btn-primary btn-sm">   Search  Employees </a>
+              </p>
+            </li>
+
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">References<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="GroupSearch.aspx">Team / Group search</a></li>
+                <li><a href="https://conover360.estratex.com" target="_blank">Benefits + Perks</a></li>
+                <li><a href="http://gravitypayments.com/careers" target="_blank">Job Postings</a></li>
+                <li><a href="http://app.powerbi.com" target="_blank">Reports (Micro Bi)</a></li>
+              </ul>
+            </li>
+
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Quick links: </a></li>
+            <li><p class="navbar-btn"><a href="https://mail.google.com/mail/u/0/#inbox" class="btn btn-primary btn-sm" target="_blank">Mail</a></p></li>
+            <li><p class="navbar-btn" style="margin-left:5px"><a href="https://drive.google.com/drive/my-drive" class="btn btn-primary btn-sm" target="_blank">Drive</a></p></li>
+            <li><p class="navbar-btn" style="margin-left:5px"><a href="https://www.concursolutions.com/" class="btn btn-primary btn-sm" target="_blank">Concur</a></p></li>
+            <li><p class="navbar-btn" style="margin-left:5px"><a href="https://gravitypayments.egnyte.com/SimpleUI/home.do#Files/0/Shared" class="btn btn-primary btn-sm" target="_blank">Egnyte</a></p></li>
+            <li><p class="navbar-btn" style="margin-left:5px"><a href="https://www.youraccessone.com/1739Gravp" class="btn btn-primary btn-sm" target="_blank">Access</a></p></li>
+            <li><a href="Logoff.aspx"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+          </ul>
+
+        </div>
+    </div>
+  </nav>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
+        <div class="container">
+          <div class="row">
+            <h2>Monthly Sales Goal</h2>
+            <div id="ContentPlaceHolder1_divSalesBar" class="progress">
+              <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="63" aria-valuemin="0" aria-valuemax="100" style="width:63%">
+                63% Complete (success)
+              </div>
+            </div>
+            <div id="ContentPlaceHolder1_testxx"></div>
+          </div>
+        </div>
+         <div class = "panel panel-primary">
+          <div class = "panel-heading">
+            <h2 class = "panel-title">Top Ten Standings</h2>
+          </div>
+
+          <div class = "panel-body">
+
+
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Sales Rep</th>
+                </tr>
+              </thead>
+              <tbody>
+
+                <tr>
+                  <td>1</td>
+                  <td>Paul Kiriakos</td>
+                </tr>
+
+                <tr>
+                  <td>2</td>
+                  <td>Shawn Fedina</td>
+                </tr>
+
+                <tr>
+                  <td>3</td>
+                  <td>Brad Hennessy</td>
+                </tr>
+
+                <tr>
+                  <td>4</td>
+                  <td>Ayman Lukata</td>
+                </tr>
+
+                <tr>
+                  <td>5</td>
+                  <td>Jared Spears</td>
+                </tr>
+
+                <tr>
+                  <td>6</td>
+                  <td>Jim Fryett</td>
+                </tr>
+
+                <tr>
+                  <td>7</td>
+                  <td>Micah Chinen</td>
+                </tr>
+
+                <tr>
+                  <td>8</td>
+                  <td>Christian Ocariza</td>
+                </tr>
+
+                <tr>
+                  <td>9</td>
+                  <td>Andria Lim</td>
+                </tr>
+
+                <tr>
+                  <td>10</td>
+                  <td>Adam Smith</td>
+                </tr>
+
+                <tr>
+                  <td colspan="2" style="text-align:center"><small><span id="ContentPlaceHolder1_lblSaleRepUpdtTs">Updated Feb 02 2016</span></small></td>
+                </tr>
+                <tr>
+                  <td colspan="2"><div id="ContentPlaceHolder1_divUpdtSalesBtn" style="margin-left:30px; margin-top:30px"></div></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+         <div class="col-xs-12 col-sm-12 col-md-4 col-lg-2">
+
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+
+         <div class = "panel panel-primary">
+          <div class = "panel-heading">
+            <h2 class = "panel-title">Tiny Pulse Cheers</h2>
+          </div>
+
+          <div class = "panel-body">
+
+           <div class="row">
+            <div class="col-xs-12">
+              <ul id="ContentPlaceHolder1_ulTinyItems" class="TinyPulse"><li class="news-item"><table><tr><td><h5>Cody B</h5><h4>"Thanks for always being so flexible and making the team better!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>James R</h5><h4>"You've been super helpful to me the last few weeks. Thanks for being awesome man."</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Kimberley P</h5><h4>"Great job on training the newest Finance team members and even older team members that tend to forget things. They are picking things up quickly and I have heard a lot of positive feedback about your training regime which evidently shows by how fast they are picking up reading statements and generating proposals.  Great work Kimberley! You're a HUGE asset to the Finance team and Gravity."</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Matthew D</h5><h4>"Thanks for always making my day a little brighter! You da best. "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Becca G</h5><h4>"Excited to have you on the team!!!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Ashlie B</h5><h4>"You're killing it in all ways. Keep it up gf :)"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Cary C</h5><h4>"You've been super informative! Thanks for being an awesome trainer. "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Kimberley P</h5><h4>"She is an awesome teacher and so knowledgeable! "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Jenae T</h5><h4>"Thank you for teaching me how to use the coffee machine!! My day got exponentially better with espresso! "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Maurice D</h5><h4>"Excited to have you on the Team.  Welcome to Gravity and Team Advocates!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Caitlin C</h5><h4>"Thanks for hiring so many awesome people to work here! I like them all!!!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Darcy G</h5><h4>"You've been gone one day, and the office is already more morose than I could have imagined. You are the pep of the office!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Jon-Erik E</h5><h4>"Appreciate you taking time to help me out as I keep learning the finance way of life!! Thanks JE!!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Emily S</h5><h4>"Thank you so much for putting all the hard work into developing the cross-training program! It's going to be extremely valuable and I am very excited to get it started and see the success! "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Hunter R</h5><h4>"I'm glad you had the vision for the knowledgebase and got it going. Once it's done it will be like an amazing work of art! Thanks!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Jonah O</h5><h4>"Hope you're having a fantastic week!!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Jose G</h5><h4>"words can't even describe how wonderful this man is. "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Aaron G</h5><h4>"I'm so proud of you Aaron as you have grown so much the last 4 months. You are doing such a great job! Your hard work ethic and commitment to customer service are what make you so great. Proud to work alongside you!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Matthew D</h5><h4>"Thank you for always being my sunshine."</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Darcy G</h5><h4>"You are my Beyonce. Always. WHAT AM I GOING TO DO WITHOUT YOU FOR A WEEK?!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Jon-Erik E</h5><h4>"Jon-Erik you rock! You do such a great job with proposals and your attention to detail is unparalleled! I know I can always count on you! Thanks bro!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Hayley V</h5><h4>"You are a beautiful soul. "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Jose G</h5><h4>"You make me smile! Thanks for being a great person!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Amanda V</h5><h4>"I just think you're really super cool."</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>David S</h5><h4>"A cheers for you because you're awesome!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Jared S</h5><h4>"for being a funky mother...\r\nSHUT YO MOUTH\r\nbut im just talking bout Funky Jared.\r\nTHEN WE CAN DIG IT\r\n"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Daniel R</h5><h4>"Hey man, thanks for all the help and advice you've given lately.  You are an awesome resource and display a lot of really great leadership qualities.  It's great working with you."</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Brad H</h5><h4>"Thanks for letting me be your shadow, and almost getting me killed. It's all good when it turns into an appointment though. Next time I visit let's try to have fewer near death experiences. "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Garret N</h5><h4>"Glad to finally meet the poker champ live and in person! Doesn't feel so bad losing to a stand up guy, Thanks for making me feel welcome in Idaho and showing me the ropes. "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Katie  R</h5><h4>"So glad to have you on the team! Congrats on your first few days in the field and letting Minnesota know what's up! "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Alex L</h5><h4>"Four weeks down and you are already showing Minnesota what's up! Excited to see what you and Katie do this week, keep it up! "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Alex F</h5><h4>"Thanks for all the great feedback and support! "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Jason H</h5><h4>"Jason has a very keen eye for detail that has probably saved me from making horrible mistakes time and time again (be it in office-wide e-mails or to something in our backend systems...). Thanks for always being open to acting as a second set of eyes! Your patience doesn't go unnoticed. "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Soek C</h5><h4>"Thank you for letting me shadow you and helping me do my first proposal!!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Nydelis O</h5><h4>"Nydelis, Kimberley, and Nick rocked presentations during orientation this week!! Thank you!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Kimberley P</h5><h4>"Nydelis, Kimberley, and Nick rocked presentations during orientation this week!! Thank you!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Nick H</h5><h4>"Nydelis, Kimberley, and Nick rocked presentations during orientation this week!! Thank you!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Jim F</h5><h4>"Thank you for proactively volunteering to take the shred box out!! It was a huge help."</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Katie  R</h5><h4>"Welcome to the team, we're excited to have you here!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Jonah O</h5><h4>"Welcome to the team, we're excited to have you here!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Courtney T</h5><h4>"You are absolutely killing it on the phones! You come across as a seasoned pro, and I know you're going to do great things here at Gravity!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Caitlin C</h5><h4>"Thanks for hiring great people for us!!! "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Ylan M</h5><h4>"Thanks for always fixing my computer with your magical powers! And for putting up with all my annoying requests!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Bart B</h5><h4>"You're always helping everyone. Thanks!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Ryan P</h5><h4>"A cheers for you since you're the best email writer on the planet. "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Daniel R</h5><h4>"A cheers for you just because you're awesome and do a kick-ass job at your job. "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Nathan J</h5><h4>"Thanks so much for surprising me with a ride to the office- that made my day! You are generous and awesome. Thanks!"</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Soek C</h5><h4>"TALK ABOUT A TEAM PLAYER!  Soek is absolutely amazing.  He's constantly doing anything and everything he can to help this place grow.  So great to have him around. "</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Garrett E</h5><h4>"This guy rocks. Consistently answers complex questions simply and effectively, Slack Superhero."</h4></td></tr></table></li><li class="news-item"><table><tr><td><h5>Alex L</h5><h4>"Way to own the first & second week! Minnesota didn't even see it coming!"</h4></td></tr></table></li></ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div id="ContentPlaceHolder1_divUpdtTinyBtn" style="margin-left:30px; margin-top:30px"></div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-6">
+
+      <div class = "panel panel-primary">
+        <div class = "panel-heading">
+          <h2 class = "panel-title">Company News</h2>
+        </div>
+
+        <div class = "panel-body"  style = "margin-left:20px; margin-right:20px">
+
+
+         <div class="row">
+          <h4>This is test article number 2.a</h4>
+          <p>This is some text for the article.  This is some text for the article.  This is some text for the article.  This is some text for the article.  This is some text for the article.  This is some text fo....</p>
+          <p><small>Tue Feb 16 2016</small></p>
+          <p><hr /></p>
+        </div>
+
+        <div class="row">
+          <h4>This is a test headline for the first article ss.</h4>
+          <p>This is some text for the article.  This is some text for the article.  This is some text for the article.  This is some text for the article.  This is some text for the article.  This is some text fo....</p>
+          <p><small>Mon Jan 18 2016</small></p>
+          <p><hr /></p>
+        </div>
+
+        <div class="row">
+          <h4>This is article 5a</h4>
+          <p>This is some text that is article 5.  This will be a fairly short deal.  Add some text.</p>
+          <p><small>Mon Dec 14 2015</small></p>
+          <p><hr /></p>
+        </div>
+
+        <div class="row">
+          <h4>The article title is a bit longer that the typical article title and will take up more space</h4>
+          <p>This is some text for the article.  This is some text for the article.</p>
+          <p><small>Mon Dec 14 2015</small></p>
+          <p><hr /></p>
+        </div>
+
+        <div>
+          <a href="GravityNews.aspx" class="btn btn-primary btn-sm">More News <span class="glyphicon glyphicon-chevron-right"></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+<div class="row">
+
+ <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+
+   <div class = "panel panel-primary">
+    <div class = "panel-heading">
+      <h2 class = "panel-title">Celebration</h2>
+    </div>
+
+    <div class = "panel-body">
+
+     <table id="ContentPlaceHolder1_tblBrthDt" class="table">
+       <tr>
+        <td colspan="2"><br /><strong>Birthdays</strong><br /></td>
+      </tr><tr>
+      <td>03/05</td><td>David Patino</td>
+    </tr><tr>
+    <td>03/07</td><td>Nate June (Nathan)</td>
+  </tr><tr>
+  <td>03/08</td><td>David Sassaman</td>
+</tr><tr>
+<td>03/09</td><td>Christopher Foulger</td>
+</tr><tr>
+<td>03/09</td><td>Soek Chhim (Sochittra)</td>
+</tr>
+</table>
+<table id="ContentPlaceHolder1_tblAnnvDt" class="table">
+ <tr>
+  <td colspan="2"><br /><strong>Anniversaries</strong><br /></td>
+</tr>
+</table>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
+
+ <div class = "panel panel-primary">
+  <div class = "panel-heading">
+    <h2 class = "panel-title">Out of Office</h2>
+  </div>
+
+  <div class = "panel-body">
+
+   <table id="ContentPlaceHolder1_tblOOO" class="table">
+     <tr>
+      <td>April Gracz</td><td>03/09/2016 - 03/11/2016</td>
+    </tr><tr>
+    <td>Becky Groffman (Rebecca)</td><td>03/11/2016</td>
+  </tr><tr>
+  <td></td><td>03/14/2016 - 03/17/2016</td>
+</tr><tr>
+<td>Nick Hutton (Nicholas)</td><td>03/10/2016</td>
+</tr><tr>
+<td>Ryan Pirkle (Larry)</td><td>03/17/2016</td>
+</tr>
+</table>
+
+</div>
+</div>
+</div>
+
+
+<div class="col-xs-12 col-sm-12 col-md-9 col-lg-5">
+
+ <div class = "panel panel-primary">
+  <div class = "panel-heading">
+    <h2 class = "panel-title">Tiny Pulse Survey</h2>
+  </div>
+
+  <div class = "panel-body">
+
+   <div class="row">
+    <div class="col-xs-12">
+      <img id="ContentPlaceHolder1_imgTinyPulse" src="images/TinyPulse.png" style="height:400px;width:600px;" />
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+
+
+
+<div class="row">
+  <span id="ContentPlaceHolder1_lblErrrMssgTx"></span>
+</div>
+
+
+</div>
+
+
+
+</div>
+</div>
+
+<br />
+</form>
+
+<footer class="footer">
+ <div class="container">
+   <br />
+   <br />
+   <div class="col-md-2 col-sm-4 col-xs-6"></div>
+
+   <div >
+    <a href="https://www.linkedin.com/company/gravity-payments" target="_blank"><img src="images/LinkedIn.png" /></a>
+    <a href="https://www.facebook.com/gravitypayments" target="_blank"><img src="images/Facebook.png" /></a>
+    <a href="https://twitter.com/gravitypymts" target="_blank"><img src="images/Twitter.png" /></a>
+  </div>
+  <br />
+  <br />
+
+</div>
+
+
+</footer>
+</body>
+</html>

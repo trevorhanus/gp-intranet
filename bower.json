@@ -1,0 +1,21 @@
+{
+  "name": "intranet",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Trevor Hanus <trevorhanus@gmail.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "bootstrap-sass": "bootstrap-sass-official#~3.3.6"
+  }
+}
